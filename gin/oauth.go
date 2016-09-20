@@ -10,6 +10,13 @@ package gin
 
 import "time"
 
+// AuthResponse authentication response
+type AuthResponse struct {
+	Scope       string `json:"scope"`
+	AccessToken string `json:"access_token"`
+	TokenType   string `json:"token_type"`
+}
+
 // TokenResponse Token request response json struct
 type TokenResponse struct {
 	TokenType    string  `json:"token_type"`
