@@ -1,0 +1,13 @@
+# Visual studio code
+.vscode
+
+# Idea
+*.iml
+.idea
+
+# Temp
+*~
+
+# Vim swap files
+*.swp
+
