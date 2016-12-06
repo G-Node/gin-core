@@ -10,14 +10,14 @@ package gin
 
 import "time"
 
-// AuthResponse authentication response
+// AuthResponse is used by the auth server to serve authentication responses.
 type AuthResponse struct {
 	Scope       string `json:"scope"`
 	AccessToken string `json:"access_token"`
 	TokenType   string `json:"token_type"`
 }
 
-// TokenResponse Token request response json struct
+// TokenResponse is used by the auth server to serve token request responses.
 type TokenResponse struct {
 	TokenType    string  `json:"token_type"`
 	Scope        string  `json:"scope"`
@@ -25,7 +25,7 @@ type TokenResponse struct {
 	RefreshToken *string `json:"refresh_token"`
 }
 
-// TokenInfo Token information json struct
+// TokenInfo is used by the auth server to serve token information requests.
 type TokenInfo struct {
 	URL        string    `json:"url"`
 	JTI        string    `json:"jti"`
@@ -34,4 +34,14 @@ type TokenInfo struct {
 	Login      string    `json:"login"`
 	AccountURL string    `json:"account_url"`
 	Scope      string    `json:"scope"`
+}
+
+// LoginRequest is used for sending login credentials from clients.
+type LoginRequest struct {
+	Scope        string `json:"scope"`
+	Username     string `json:"username"`
+	Password     string `json:"password"`
+	GrantType    string `json:"grant_type"`
+	ClientID     string `json:"client_id"`
+	ClientSecret string `json:"client_secret"`
 }
